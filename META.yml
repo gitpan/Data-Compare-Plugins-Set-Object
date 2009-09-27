@@ -1,0 +1,28 @@
+---
+abstract: 'plugin for Data::Compare to handle'
+author:
+  - 'Mark Gardner <mjg@phoenixtrap.com>'
+build_requires:
+  ExtUtils::MakeMaker: 6.42
+  Test::More: 0
+configure_requires:
+  ExtUtils::MakeMaker: 6.42
+  version: 0.77
+distribution_type: module
+generated_by: 'Module::Install version 0.91'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Data-Compare-Plugins-Set-Object
+no_index:
+  directory:
+    - inc
+    - t
+requires:
+  Data::Compare: 0.06
+  English: 0
+  List::MoreUtils: 0.04
+resources:
+  license: http://dev.perl.org/licenses/
+version: 1.0_1
