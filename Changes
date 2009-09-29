@@ -1,5 +1,9 @@
 Revision history for Data-Compare-Plugins-Set-Object
 
+1.0_3  Tue Sep 29 11:30:00 2009
+       Added Test::Perl::Critic to test_requires, reported by Slaven Rezić
+       Also added Test::Pod and Test::Pod::Coverage to test_requires
+       Added Set::Object to requirements (oops!)
 1.0_2  Mon Sep 28 23:00:00 2009
        Minor documentation fixes and pod formatting.
 1.0_1  Sat Sep 26 21:19:06 2009

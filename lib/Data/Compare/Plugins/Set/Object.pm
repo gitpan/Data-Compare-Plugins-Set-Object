@@ -2,7 +2,7 @@ package Data::Compare::Plugins::Set::Object;
 
 use strict;
 use warnings;
-use version 0.77; our $VERSION = qv('v1.0_2');
+use version 0.77; our $VERSION = qv('v1.0_3');
 use English qw(-no_match_vars);
 use Data::Compare;
 use List::MoreUtils qw(any);
@@ -38,7 +38,7 @@ Set::Object objects
 
 =head1 VERSION
 
-This document describes Data::Compare::Plugins::Set::Object version 1.0_2
+This document describes Data::Compare::Plugins::Set::Object version 1.0_3
 
 =head1 SYNOPSIS
 
@@ -92,6 +92,8 @@ Data::Compare::Plugins::Set::Object requires no configuration files or environme
 =over
 
 =item L<Data::Compare> >= 0.06 (must be installed separately)
+
+=item L<Set::Object> (must be installed separately)
 
 =item L<List::MoreUtils> >= 0.04 (must be installed separately)
 
