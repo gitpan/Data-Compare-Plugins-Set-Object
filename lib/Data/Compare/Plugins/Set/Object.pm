@@ -2,7 +2,7 @@ package Data::Compare::Plugins::Set::Object;
 
 use strict;
 use warnings;
-use version 0.77; our $VERSION = qv('v1.0_1');
+use version 0.77; our $VERSION = qv('v1.0_2');
 use English qw(-no_match_vars);
 use Data::Compare;
 use List::MoreUtils qw(any);
@@ -38,7 +38,7 @@ Set::Object objects
 
 =head1 VERSION
 
-This document describes Data::Compare::Plugins::Set::Object version 1.0
+This document describes Data::Compare::Plugins::Set::Object version 1.0_2
 
 =head1 SYNOPSIS
 
@@ -61,8 +61,8 @@ This document describes Data::Compare::Plugins::Set::Object version 1.0
 
 =head1 DESCRIPTION
 
-Enables Data::Compare to Do The Right Thing for Set::Object objects.
-Set::Object already has an equals() method, but it only returns true if
+Enables L<Data::Compare> to Do The Right Thing for L<Set::Object> objects.
+Set::Object already has an C<equals()> method, but it only returns true if
 objects within two sets are exactly equal (i.e. have the same references,
 referring to the same object instance).  When using Data::Compare in
 conjuction with this plugin, objects in sets are considered the same if their
@@ -76,12 +76,12 @@ itself: pass the reference to two data structures to the Compare function,
 which for historical reasons is exported by default.
 
 Set::Object also can export certain functions, and overloads comparison
-operators pertaining to sets.  Consult the Set::Object documentation for more
-information.
+operators pertaining to sets.  Consult the
+L<Set::Object documentation|Set::Object> for more information.
 
 =head1 DIAGNOSTICS
 
-See the documentation for Data::Compare.
+See the L<documentation for Data::Compare|Data::Compare>.
 
 =head1 CONFIGURATION AND ENVIRONMENT
 
@@ -91,13 +91,13 @@ Data::Compare::Plugins::Set::Object requires no configuration files or environme
 
 =over
 
-=item Data::Compare >= 0.06 (must be installed separately)
+=item L<Data::Compare> >= 0.06 (must be installed separately)
 
-=item List::MoreUtils >= 0.04 (must be installed separately)
+=item L<List::MoreUtils> >= 0.04 (must be installed separately)
 
-=item version >= 0.77 (part of the standard Perl 5.10.1 distribution)
+=item L<version> >= 0.77 (part of the standard Perl 5.10.1 distribution)
 
-=item English (part of the standard Perl 5 distribution)
+=item L<English> (part of the standard Perl 5 distribution)
 
 =back
 
@@ -110,16 +110,17 @@ None reported.
 No bugs have been reported.
 
 Please report any bugs or feature requests to
-C<bug-data-compare-plugins-set-object@rt.cpan.org>, or through the web interface at
-L<http://rt.cpan.org>.
+C<bug-data-compare-plugins-set-object@rt.cpan.org>, or through the web
+interface at L<http://rt.cpan.org>.
 
 =head1 AUTHOR
 
-Mark Gardner  C<< <mjg@phoenixtrap.com> >>
+Mark Gardner  C<< <mjgardner@cpan.org> >>
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright (c) 2009, Mark Gardner C<< <mjg@phoenixtrap.com> >>. All rights reserved.
+Copyright (c) 2009, Mark Gardner C<< <mjgardner@cpan.org> >>. All rights
+reserved.
 
 This module is free software; you can redistribute it and/or
 modify it under the same terms as Perl 5.10.1 itself.

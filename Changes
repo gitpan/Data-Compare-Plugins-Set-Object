@@ -1,5 +1,7 @@
 Revision history for Data-Compare-Plugins-Set-Object
 
+1.0_2  Mon Sep 28 23:00:00 2009
+       Minor documentation fixes and pod formatting.
 1.0_1  Sat Sep 26 21:19:06 2009
        Initial release.
 

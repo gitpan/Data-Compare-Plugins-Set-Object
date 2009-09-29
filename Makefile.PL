@@ -1,8 +1,8 @@
 use inc::Module::Install;
 
 name     'Data-Compare-Plugins-Set-Object';
-author   q{Mark Gardner <mjg@phoenixtrap.com>};
-version  '1.0_1';
+author   q{Mark Gardner <mjgardner@cpan.org>};
+version  '1.0_2';
 license  'perl';
 all_from 'lib/Data/Compare/Plugins/Set/Object.pm';
 
