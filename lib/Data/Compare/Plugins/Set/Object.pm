@@ -2,31 +2,42 @@ package Data::Compare::Plugins::Set::Object;
 
 use strict;
 use warnings;
-use version 0.77; our $VERSION = qv('v1.0_3');
+use version 0.77; our $VERSION = qv('v1.0_4');
 use English qw(-no_match_vars);
 use Data::Compare;
-use List::MoreUtils qw(any);
+use List::Util qw(first);
 
 sub _register {
     return [ 'Set::Object', \&_so_set_compare ];
 }
 
 sub _so_set_compare {
-    my @set = splice @ARG, 0, 2;
+    my @sets = splice @ARG, 0, 2;
 
-    return 0 if $set[0]->size != $set[1]->size;
-    return 1 if $set[0] == $set[1];
+    # quick optimizations if sets aren't of equal size or are directly equal
+    return 0 if $sets[0]->size() != $sets[1]->size();
+    return 1 if $sets[0]         == $sets[1];
 
-    my $count = 0;
-    for my $element ( $set[0]->elements ) {
-        return 0
-          if not any { Data::Compare::Compare( $element, $ARG ) }
-            grep { ref eq ref $element } $set[1]->elements;
-        $count++;
+    # loop over each of the first set's elements
+    # looking for a match in the second set
+    for my $element ( $sets[0]->elements() ) {
+        my $matched_element =
+            first { Data::Compare::Compare( $element, $ARG ) }
+            grep  { ref eq ref $element } $sets[1]->elements();
+
+        # return false if not found
+        return 0 if not defined $matched_element;
+
+        # otherwise remove from copy of second set and keep going
+        $sets[1]->remove($matched_element);
     }
-    return $count == $set[0]->size;
+
+    # sets are equal only if we've exhausted the second set
+    return $sets[1]->is_null();
 }
 
+# Data::Compare::Plugins interface requires modules to return an arrayref
+## no critic (RequireEndWithOne)
 _register();
 
 __END__
@@ -38,7 +49,7 @@ Set::Object objects
 
 =head1 VERSION
 
-This document describes Data::Compare::Plugins::Set::Object version 1.0_3
+This document describes Data::Compare::Plugins::Set::Object version 1.0_4
 
 =head1 SYNOPSIS
 
@@ -69,10 +80,10 @@ conjuction with this plugin, objects in sets are considered the same if their
 B<contents> are the same.  This extends down to sets that contain arrays,
 hashes, or other objects supported by Data::Compare plugins.
 
-=head1 INTERFACE
+=head1 SUBROUTINES/METHODS
 
 As a plugin to Data::Compare, the interface is the same as Data::Compare
-itself: pass the reference to two data structures to the Compare function,
+itself: pass the reference to two data structures to the C<Compare> function,
 which for historical reasons is exported by default.
 
 Set::Object also can export certain functions, and overloads comparison
@@ -95,11 +106,11 @@ Data::Compare::Plugins::Set::Object requires no configuration files or environme
 
 =item L<Set::Object> (must be installed separately)
 
-=item L<List::MoreUtils> >= 0.04 (must be installed separately)
+=item L<English> (part of the standard Perl 5 distribution)
+
+=item L<List::Util> (part of the standard Perl 5 distribution)
 
 =item L<version> >= 0.77 (part of the standard Perl 5.10.1 distribution)
-
-=item L<English> (part of the standard Perl 5 distribution)
 
 =back
 

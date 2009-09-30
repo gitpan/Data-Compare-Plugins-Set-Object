@@ -25,8 +25,8 @@ no_index:
 requires:
   Data::Compare: 0.06
   English: 0
-  List::MoreUtils: 0.04
+  List::Util: 0
   Set::Object: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 1.0_3
+version: 1.0_4
