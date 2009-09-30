@@ -2,9 +2,9 @@ package Data::Compare::Plugins::Set::Object;
 
 use strict;
 use warnings;
-use version 0.77; our $VERSION = qv('v1.0_4');
+use version 0.77; our $VERSION = qv('v1.0_5');
 use English qw(-no_match_vars);
-use Data::Compare;
+use Data::Compare 0.06;
 use List::Util qw(first);
 
 sub _register {
@@ -49,7 +49,7 @@ Set::Object objects
 
 =head1 VERSION
 
-This document describes Data::Compare::Plugins::Set::Object version 1.0_4
+This document describes Data::Compare::Plugins::Set::Object version 1.0_5
 
 =head1 SYNOPSIS
 

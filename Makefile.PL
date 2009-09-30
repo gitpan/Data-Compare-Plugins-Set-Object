@@ -2,7 +2,7 @@ use inc::Module::Install;
 
 name     'Data-Compare-Plugins-Set-Object';
 author   q{Mark Gardner <mjgardner@cpan.org>};
-version  '1.0_4';
+version  '1.0_5';
 license  'perl';
 all_from 'lib/Data/Compare/Plugins/Set/Object.pm';
 

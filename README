@@ -19,9 +19,9 @@ To install this module, run the following commands:
 DEPENDENCIES
 
 Data::Compare >= 0.06
-Set::Object
-List::MoreUtils >= 0.04
 version >= 0.77
+Set::Object
+List::Util
 English
 
 

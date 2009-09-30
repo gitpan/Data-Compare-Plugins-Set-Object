@@ -2,7 +2,7 @@ use Test::More tests => 4;
 
 BEGIN {
 use_ok( 'Set::Object' );
-use_ok( 'Data::Compare' );
+use_ok( 'Data::Compare', 0.06 );
 }
 
 $foo = {
