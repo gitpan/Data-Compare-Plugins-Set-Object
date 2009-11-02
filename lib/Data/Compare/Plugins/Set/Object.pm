@@ -1,8 +1,9 @@
 package Data::Compare::Plugins::Set::Object;
 
+use 5.008;
 use strict;
 use warnings;
-use version 0.77; our $VERSION = qv('v1.0_5');
+use version 0.77; our $VERSION = qv('v1.0');
 use English qw(-no_match_vars);
 use Data::Compare 0.06;
 use List::Util qw(first);
@@ -44,8 +45,7 @@ __END__
 
 =head1 NAME
 
-Data::Compare::Plugins::Set::Object - plugin for Data::Compare to handle
-Set::Object objects
+Data::Compare::Plugins::Set::Object - plugin for Data::Compare to handle Set::Object objects
 
 =head1 VERSION
 
@@ -122,13 +122,15 @@ None reported.
 
 No bugs have been reported.
 
+Please report any bugs or feature requests via GitHub at
+L<http://github.com/mjg/Data-Compare-Plugins-Set-Object/issues>.
 Please report any bugs or feature requests to
 C<bug-data-compare-plugins-set-object@rt.cpan.org>, or through the web
 interface at L<http://rt.cpan.org>.
 
 =head1 AUTHOR
 
-Mark Gardner  C<< <mjgardner@cpan.org> >>
+Mark Gardner <mjgardner@cpan.org>
 
 =head1 LICENSE AND COPYRIGHT
 

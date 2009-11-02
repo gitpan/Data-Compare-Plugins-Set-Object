@@ -1,13 +1,10 @@
 ---
-abstract: 'plugin for Data::Compare to handle'
+abstract: 'plugin for Data::Compare to handle Set::Object objects'
 author:
   - 'Mark Gardner <mjgardner@cpan.org>'
 build_requires:
   ExtUtils::MakeMaker: 6.42
   Test::More: 0
-  Test::Perl::Critic: 0
-  Test::Pod: 1.14
-  Test::Pod::Coverage: 1.04
 configure_requires:
   ExtUtils::MakeMaker: 6.42
   version: 0.77
@@ -22,11 +19,16 @@ no_index:
   directory:
     - inc
     - t
+    - xt
 requires:
   Data::Compare: 0.06
   English: 0
   List::Util: 0
   Set::Object: 0
+  perl: 5.8.0
 resources:
+  bugtracker: http://github.com/mjg/Data-Compare-Plugins-Set-Object/issues
+  homepage: http://github.com/mjg/Data-Compare-Plugins-Set-Object/tree
   license: http://dev.perl.org/licenses/
-version: 1.0_5
+  repository: git://github.com/mjg/Data-Compare-Plugins-Set-Object.git
+version: 1.000000
